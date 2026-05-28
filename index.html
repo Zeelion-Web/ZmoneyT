@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Money Tracker</title>
+
+<style>
+body{
+    background:#121212;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+    padding:30px;
+}
+
+.box{
+    background:#1e1e1e;
+    padding:20px;
+    border-radius:20px;
+    width:300px;
+    margin:auto;
+}
+
+input{
+    width:90%;
+    padding:10px;
+    margin:5px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:#00aa55;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Money Tracker</h1>
+
+<h2 id="money">เงิน: 0 บาท</h2>
+
+<input type="number" id="amount" placeholder="จำนวนเงิน">
+
+<br>
+
+<button onclick="addMoney()">เพิ่มเงิน</button>
+<button onclick="removeMoney()">จ่ายเงิน</button>
+
+</div>
+
+<script>
+
+let money = 0;
+
+function update(){
+    document.getElementById("money").innerText =
+    "เงิน: " + money + " บาท";
+}
+
+function addMoney(){
+    let value =
+    Number(document.getElementById("amount").value);
+
+    money += value;
+
+    update();
+}
+
+function removeMoney(){
+    let value =
+    Number(document.getElementById("amount").value);
+
+    money -= value;
+
+    update();
+}
+
+</script>
+
+</body>
+</html>
